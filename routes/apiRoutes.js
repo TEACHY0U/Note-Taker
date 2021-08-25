@@ -12,4 +12,19 @@ module.exports = function(app){
             }
         });
     }
+
+
+    app.get("/api/notes", function(req, res){
+        res.json(notesData);
+    });
+
+
+    if (notesData.length == 0){
+        req.body.id = "0";
+    } else{
+        req.body.id = JSON.stringify(JSON.parse(notesData[notesData.length - 1].id) + 1);
+    }
+    
+    console.log("req.body.id: " + req.body.id);
+
 }
