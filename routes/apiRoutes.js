@@ -36,10 +36,9 @@ module.exports = function(app){
         res.json(req.body);
     });
 
-
         // Write notes data to database
         writeToDB(notesData);
-};
 
+    };
 
 
